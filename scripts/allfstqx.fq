@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [[ $@[1] = SRR059952_1.fastq ]]; then
+ #fastx_trimmer -f 12 -l 300 | fastq_quality_filter -q 20 -p 80 | fastx_clipper -l 70 |fastx_collapser > SRR059952_1.fasta
+fi
+if [[ $@[2] = SRR059952_2.fastq ]]; then
+#fastx_trimmer -f 12 - l 300 | fastq_quality_filter -q 20 -p 80 | fastx_clipper -l 70 |fastx_collapser > SRR059952_2.fasta
+fi
+if [[ $@[3] = SRR061235_1.fastq ]]; then
+fastx_trimmer -f 12 - l 300 | fastq_quality_filter -q 20 -p 80 | fastx_clipper -l 70 | fastx_collapser > SRR061235_1.fasta
+fi
+if [[ $@[4] = SRR061235_2.fastq ]]; then
+fastx_trimmer -f 12 -l 300 | fastq_quality_filter -q 20 -p 80 | fastx_clipper -l 70 | fastx_collapser > SRR061235_2.fasta
+fi
+if [[ $@[5] = SRR346712_1.fastq ]]; then
+fastx_trimmer -f 12 -l 300 | fastq_quality_filter -q 20 -p 80 | fastx_clipper -l 70 | fastx_collapser > SRR346712_1.fasta
+fi
+if [[ $@[6] = SRR346712_2.fastq ]]; then
+fastx_trimmer -f 12 -l 300 | fastq_quality_filter -q 20 -p 80 | fastx_clipper -l 70 | fastx_collapser > SRR346712_2.fasta
+fi
+
+
