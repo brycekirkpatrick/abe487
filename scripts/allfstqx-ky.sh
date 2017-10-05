@@ -4,7 +4,7 @@ i=0
 for FILE in "$@"; do
     let i++
     BASENAME=$(basename "$FILE")
-    FA="${BASENAME%.fastq}.fa"
+    FA="${FILE%.fastq}.fa"
     printf "%3d: %s -> %s\n" $i $BASENAME $FA
 
     START=12
@@ -17,10 +17,11 @@ for FILE in "$@"; do
         START=8
     fi
 
-    #fastx_trimmer -f $START -l $END $FILE | \
-    #  fastq_quality_filter -q 20 -p 80 | \
-    #  fastx_clipper -l 70 | \
-    #  fastx_collapser > $FA
+    fastx_trimmer -f $START -l $END $FILE | \
+      fastq_quality_filter -q 20 -p 80 | \
+      fastx_clipper -l 70 | \
+      fastx_collapser > $FA
+    break
 done
 
 echo "Done."
