@@ -12,7 +12,6 @@ if len(args) < 1:
 file = args[0]
 seqlen = int(args[1]) if len(args) > 1 else 5 #default sequence length
 
-#print('file "{}" seqlen "{}"'.format(file, seqlen))
 lines=[]
 
 if os.path.isfile(file):	
@@ -23,11 +22,3 @@ else:
 for line in lines:
 	print(line[:seqlen])
 
-#if not os.path.isfile(file):
-# if file.isstring():
-#  for line in 'CGTA'
-#  print('{}'.format(seglen))
-#else:
-# for line in open(file):
-#
-##core part of code: for characters in string/file print that string up to arg[2]
