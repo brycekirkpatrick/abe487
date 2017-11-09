@@ -4,13 +4,11 @@ import os
 
 args=sys.argv[1:]
 
-if len(args) < 1:
+if len(args) < 2:
     print("Usage: requires two strings")
     sys.exit(1)
 input1=args[0]
 input2=args[1]
-
-print(input1, input2)
 length1=len(input1)
 length2=len(input2)
 i=0
