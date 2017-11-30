@@ -28,12 +28,8 @@ def main():
 #        print(Hsp(line).pident)
 #    hsp=Hsp(line)
     flds = 'qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore'.split()
-#    f_dict= {}
-#    i=0
     for line in open(file):
         row=dict(zip(flds , line.split('\t')))
-        attrs={}
-        #print(row)
         if float(row['pident']) < pct_id:
             continue   
         if evalue is not None and float(row['evalue']) > evalue: 
